@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8010249542d5572429fc283fbd0ea537, type: 3}
+  m_Name: UNIT_RANGERS_SQUAD
+  m_EditorClassIdentifier: 
+  Key: UNIT_RANGERS_SQUAD
+  BaseInformation:
+    Name: Ranges squad
+    Description: 
+    Icon: {fileID: 21300000, guid: 2334cc7d8967f614e9264a028547fedb, type: 3}
+  Abilites:
+  - {fileID: 11400000, guid: 3d2708bb78076f844a727eedad0d1b9e, type: 2}
+  Stats:
+    Health: 10
+    Damage: 5
+  ObjectType: 0
+  Model:
+  - {fileID: 6750699282204051899, guid: 6a8b3a236094ea84594a4557e21566a4, type: 3}
+  - {fileID: 6750699282204051899, guid: 29941a8ae4094cd4fac7f16a251c3497, type: 3}
+  AnimatorOverride: {fileID: 22100000, guid: c6eb0970db0a0e14f950246740ddbc45, type: 2}
+  OnSelectClips:
+  - {fileID: 8300000, guid: bb639d5d8e135464f8af7f79492913ad, type: 3}
+  OnGetCommandClips:
+  - {fileID: 8300000, guid: 52578751df9d55444b6cbd02481c73be, type: 3}
+  OnCantExecuteCommandClips: []
