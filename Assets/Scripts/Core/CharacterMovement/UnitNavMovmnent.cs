@@ -18,7 +18,7 @@ public class UnitNavMovmnent : MonoBehaviour, ICanMove
     }
     public void MoveToPosition(Vector3 _position) 
     {
-        Debug.Log($"MOVE to {_position}");
+        //Debug.Log($"MOVE to {_position}");
         EventOnStartMove?.Invoke();
         _navAgent.SetDestination(_position);
     }

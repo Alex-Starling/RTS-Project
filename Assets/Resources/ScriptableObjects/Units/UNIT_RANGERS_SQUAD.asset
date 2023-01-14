@@ -32,3 +32,6 @@ MonoBehaviour:
   OnGetCommandClips:
   - {fileID: 8300000, guid: 52578751df9d55444b6cbd02481c73be, type: 3}
   OnCantExecuteCommandClips: []
+  UnitsInLine: 2
+  UnitsCount: 4
+  UnitSize: 2

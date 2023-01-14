@@ -6,6 +6,7 @@ using UnityEngine;
 public abstract class BaseUnit : MonoBehaviour
 {
     public string Key;
+    [HideInInspector]
     public float Size;
     public abstract BaseBehaviour CurrentBehaviour { get; protected set; }
     public BaseBehaviour StartBehaviour;
