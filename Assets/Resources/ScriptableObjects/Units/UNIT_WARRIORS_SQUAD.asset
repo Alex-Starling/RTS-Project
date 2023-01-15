@@ -16,7 +16,7 @@ MonoBehaviour:
   BaseInformation:
     Name: Warriors squad
     Description: 
-    Icon: {fileID: 21300000, guid: 56411948191fdee40aa9a758bc74b205, type: 3}
+    Icon: {fileID: 21300000, guid: 409329751995f944bb16c53db9b346a9, type: 3}
   Abilites:
   - {fileID: 11400000, guid: 3d2708bb78076f844a727eedad0d1b9e, type: 2}
   Stats:
@@ -29,13 +29,9 @@ MonoBehaviour:
   AnimatorOverride: {fileID: 22100000, guid: c6eb0970db0a0e14f950246740ddbc45, type: 2}
   OnSelectClips:
   - {fileID: 8300000, guid: 2696ee5149c62894e875326139cafefd, type: 3}
-  - {fileID: 8300000, guid: c457f8e6b1f92e24789304276f89f8d4, type: 3}
-  - {fileID: 8300000, guid: c457f8e6b1f92e24789304276f89f8d4, type: 3}
   OnGetCommandClips:
   - {fileID: 8300000, guid: d1e24a245b4d4c142ac7138c71d95426, type: 3}
-  - {fileID: 8300000, guid: d8ecddba597946f4fa8c9cfabed864d0, type: 3}
-  - {fileID: 8300000, guid: 2918864ff15004d4da6a3554dea56a5b, type: 3}
   OnCantExecuteCommandClips: []
-  UnitsInLine: 3
-  UnitsCount: 8
+  UnitsInLine: 2
+  UnitsCount: 4
   UnitSize: 2

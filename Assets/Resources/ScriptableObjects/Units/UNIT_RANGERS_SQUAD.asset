@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Key: UNIT_RANGERS_SQUAD
   BaseInformation:
-    Name: Ranges squad
+    Name: Rangers squad
     Description: 
-    Icon: {fileID: 21300000, guid: 2334cc7d8967f614e9264a028547fedb, type: 3}
+    Icon: {fileID: 21300000, guid: b20f78c97b3bc37469872e4122be4135, type: 3}
   Abilites:
   - {fileID: 11400000, guid: 3d2708bb78076f844a727eedad0d1b9e, type: 2}
   Stats:
@@ -28,10 +28,11 @@ MonoBehaviour:
   - {fileID: 6750699282204051899, guid: 29941a8ae4094cd4fac7f16a251c3497, type: 3}
   AnimatorOverride: {fileID: 22100000, guid: c6eb0970db0a0e14f950246740ddbc45, type: 2}
   OnSelectClips:
-  - {fileID: 8300000, guid: bb639d5d8e135464f8af7f79492913ad, type: 3}
+  - {fileID: 8300000, guid: 4319590ec4a76b6428dfbb093a8b3f9b, type: 3}
   OnGetCommandClips:
-  - {fileID: 8300000, guid: 52578751df9d55444b6cbd02481c73be, type: 3}
+  - {fileID: 8300000, guid: 2eae796db190a124798af4e2ffb44ee4, type: 3}
+  - {fileID: 8300000, guid: 1b4c7ba947a97484b8ba6632c369c564, type: 3}
   OnCantExecuteCommandClips: []
   UnitsInLine: 2
-  UnitsCount: 4
+  UnitsCount: 6
   UnitSize: 2

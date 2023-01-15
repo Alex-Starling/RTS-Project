@@ -16,7 +16,7 @@ MonoBehaviour:
   BaseInformation:
     Name: Commader
     Description: 
-    Icon: {fileID: 21300000, guid: 56411948191fdee40aa9a758bc74b205, type: 3}
+    Icon: {fileID: 21300000, guid: 8a54440d50109494f925952f7d91f1cf, type: 3}
   Abilites:
   - {fileID: 11400000, guid: 3d2708bb78076f844a727eedad0d1b9e, type: 2}
   Stats:
@@ -27,13 +27,10 @@ MonoBehaviour:
   - {fileID: 6750699282204051899, guid: b406ea33fb8f2ff46a1d6279551081f8, type: 3}
   AnimatorOverride: {fileID: 22100000, guid: c6eb0970db0a0e14f950246740ddbc45, type: 2}
   OnSelectClips:
-  - {fileID: 8300000, guid: b73848be195deb44586451ea4d12e63f, type: 3}
-  - {fileID: 8300000, guid: 2f2d56b680f52764d9f67127a8df020b, type: 3}
-  - {fileID: 8300000, guid: 2d6c21d39bede1c48a9a2e38ed75e26a, type: 3}
+  - {fileID: 8300000, guid: 14068654d013d7a4c9e4eacf6da27bd1, type: 3}
+  - {fileID: 8300000, guid: 64526d0b28f000b4abf73231eba50fe2, type: 3}
   OnGetCommandClips:
-  - {fileID: 8300000, guid: 2d6c21d39bede1c48a9a2e38ed75e26a, type: 3}
-  - {fileID: 8300000, guid: 2f2d56b680f52764d9f67127a8df020b, type: 3}
-  - {fileID: 8300000, guid: b73848be195deb44586451ea4d12e63f, type: 3}
+  - {fileID: 8300000, guid: 01c422a9c688b5547b519acb958397ae, type: 3}
   OnCantExecuteCommandClips: []
   UnitsInLine: 1
   UnitsCount: 1

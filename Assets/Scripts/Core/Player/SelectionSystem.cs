@@ -138,7 +138,10 @@ namespace RtsEngine.SelectionSystem
 
                 }
 
-                Debug.Log("squad " + squadInRow +" on line " + countOfSquadLines);
+
+                int idFirstSquadInPrevLine = i - (maxSquadsInLine);
+
+                Debug.Log("squad " + squadInRow + " on line " + countOfSquadLines + "id on prev line " + idFirstSquadInPrevLine);
 
                 // Update the squad position for next squad
                 if (squadInRow < maxSquadsInLine)
@@ -148,16 +151,13 @@ namespace RtsEngine.SelectionSystem
                 }
                 else
                 {
-                    int idFirstSquadInPrevLine = i - (maxSquadsInLine);
-
-                    Debug.Log($"Отряд переходит на {countOfSquadLines} линию." + "idx first squd in pl= " + idFirstSquadInPrevLine);
-
                     int squadLines = Squads[idFirstSquadInPrevLine].UnitsInSquad.Length / unitsInLine;
 
                     sum += squadLines * Squads[idFirstSquadInPrevLine].Size * squadsOffset;
 
                     squadPosition = targetPosition + new Vector3(0, 0, sum);
 
+                    Debug.Log($"Отряд переходит на {countOfSquadLines} линию. sum {sum}");
                     Debug.Log(squadPosition);
                     squadInRow = 0;
 
@@ -316,8 +316,7 @@ namespace RtsEngine.SelectionSystem
         {
             if (Squads.Count > 0)
             {
-                if (Squads[0].Speak != null)
-                    Squads[0].Speak.SpeakOnSelected.Invoke();
+                Squads[0].Speak?.SpeakOnSelected?.Invoke();
 
                 var selectComp = Squads[0].Select;
 
