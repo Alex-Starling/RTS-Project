@@ -1,24 +1,30 @@
-using RtsEngine.Abilities;
-using RtsEngine.DataBase;
+using RTSEngine.Abilities;
+using RTSEngine.DataBase;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-namespace RtsEngine
+namespace RTSEngine
 {
-    public abstract class RTSObject : ScriptableObject
+    [CreateAssetMenu]
+    public class UnitModel : ScriptableObject
     {
+        [Header("Main")]
         public string Key;
         public BaseInfo BaseInformation;
         public BaseAbility[] Abilites;
         public StatsData Stats;
-        public RTSObjectType ObjectType;
-
+        public UnitType ObjectType;
+        [Header("Visual")]
         public GameObject[] Model;
         public AnimatorOverrideController AnimatorOverride;
-
+        public float Size;
+        [Header("Speech")]
         public AudioClip[] OnSelectClips;
         public AudioClip[] OnGetCommandClips;
         public AudioClip[] OnCantExecuteCommandClips;
+        [Header("Movement")]
+        public MovementType MovementType;
+
         public bool IsEmpty()
         {
             if (Key == null || Key == "")
@@ -28,5 +34,9 @@ namespace RtsEngine
             return false;
         }
     }
-
+    public enum MovementType
+    {
+        None,
+        NavMesh,
+    }
 }

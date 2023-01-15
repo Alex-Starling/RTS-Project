@@ -9,26 +9,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 040725e49f60942489f0c72be6cee77f, type: 3}
-  m_Name: DBEntityBuilding
+  m_Script: {fileID: 11500000, guid: 4a859a674471a8f48bd79f25ac93b490, type: 3}
+  m_Name: B_Human_Barrack
   m_EditorClassIdentifier: 
-  Key: BUILDING_HUMAN_BASE
+  Key: B_HUMAN_BARRACKS
   BaseInformation:
-    Name: Base
-    Description: 
+    Name: B_HUMAN_BARRACKS
+    Description: B_HUMAN_BARRACKS
     Icon: {fileID: 21300000, guid: ff4305481969c374d8320e5114de71d0, type: 3}
-  Abilites:
-  - {fileID: 11400000, guid: 3d2708bb78076f844a727eedad0d1b9e, type: 2}
-  - {fileID: 11400000, guid: 3d2708bb78076f844a727eedad0d1b9e, type: 2}
+  Abilites: []
   Stats:
-    Health: 1000
-    Damage: 0
+    Health: 5
+    Damage: 5
   ObjectType: 1
   Model:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1596861346305431519, guid: a42010a97f8f33444b6f80ca5ac749d0, type: 3}
   AnimatorOverride: {fileID: 0}
+  Size: 0
   OnSelectClips: []
   OnGetCommandClips: []
   OnCantExecuteCommandClips: []
+  MovementType: 0

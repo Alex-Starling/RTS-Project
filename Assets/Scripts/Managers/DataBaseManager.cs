@@ -2,20 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace RtsEngine.DataBase
+namespace RTSEngine.DataBase
 {
     public static class DataBaseManager
     {
-        private static DbEntityUnit[] dbEntityUnits;
-        private static DBEntityBuilding[] dBEntityBuildings;
+        private static UnitModel[] dbEntityUnits;
 
         private static bool Init()
         {
-            dbEntityUnits = Resources.LoadAll<DbEntityUnit>("ScriptableObjects/Units/");
-            dBEntityBuildings = Resources.LoadAll<DBEntityBuilding>("ScriptableObjects/Buildings/");
+            dbEntityUnits = Resources.LoadAll<UnitModel>("ScriptableObjects/");
             return true;
         }
-        public static DbEntityUnit[] GetAllUnits()
+        public static UnitModel[] GetAllUnits()
         {
             if (dbEntityUnits != null)
             {
@@ -30,7 +28,7 @@ namespace RtsEngine.DataBase
             }
             return null;
         }
-        public static DbEntityUnit GetUnit(string _key)
+        public static UnitModel GetUnit(string _key)
         {
             if (dbEntityUnits == null)
             {
@@ -40,24 +38,6 @@ namespace RtsEngine.DataBase
             if (dbEntityUnits != null)
             {
                 foreach (var item in dbEntityUnits)
-                {
-                    if (_key == item.Key)
-                    {
-                        return item;
-                    }
-                }
-            }
-            return null;
-        }
-        public static DBEntityBuilding GetBuilding(string _key)
-        {
-            if (dBEntityBuildings == null)
-            {
-                Init();
-            }
-            if (dBEntityBuildings != null)
-            {
-                foreach (var item in dBEntityBuildings)
                 {
                     if (_key == item.Key)
                     {

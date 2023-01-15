@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace RtsEngine.UI 
+namespace RTSEngine.UI 
 {
     public class MainMenuUI : MonoBehaviour
     {

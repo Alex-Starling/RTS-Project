@@ -1,3 +1,4 @@
+using RTSEngine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,10 +7,10 @@ public class UnitAnimation : MonoBehaviour, IAnimated
     [SerializeField]
     private Animator animator;
 
-    private UnitNavMovmnent navMovemnent;
+    private NavMovementController navMovemnent;
     private void Awake()
     {
-        navMovemnent = GetComponent<UnitNavMovmnent>();
+        navMovemnent = GetComponent<NavMovementController>();
     }
     public void PlayAnimation(AnimType animType)
     {
@@ -19,11 +20,9 @@ public class UnitAnimation : MonoBehaviour, IAnimated
     }
     public void Update()
     {
-        if (!animator || !navMovemnent)   { return; }
+        if (!animator || !navMovemnent)
+            return;
 
         animator.SetFloat("Speed", navMovemnent._navAgent.desiredVelocity.magnitude);
-
     }
-
-
 }

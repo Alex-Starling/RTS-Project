@@ -1,9 +1,9 @@
-using RtsEngine.DataBase;
+using RTSEngine.DataBase;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-namespace RtsEngine.Events 
+namespace RTSEngine.Events 
 {
     public static class GlobalEvents
     {
@@ -31,18 +31,17 @@ namespace RtsEngine.Events
     }
     public static class SelectionEvents
     {
-        public static Action<RTSObject> eventSelectObject;
-        public static void CallOnSelectObject(RTSObject _selectedObject)
+        public static Action<UnitModel> eventSelectObject;
+        public static void CallOnSelectObject(UnitModel _selectedObject)
         {
             eventSelectObject?.Invoke(_selectedObject);
         }
         public struct SelectedObject
         {
             public string selectedObjectKey;
-            public RTSObjectType selectedObjectType;
+            public UnitType selectedObjectType;
 
-            public DbEntityUnit selectedUnitEntity;
-            public DBEntityBuilding selectedBuildingEntity;
+            public UnitModel selectedUnitEntity;
         }
     }
    

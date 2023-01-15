@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-namespace RtsEngine
+namespace RTSEngine
 {
-    public enum RTSObjectType 
+    public enum UnitType
     {
-        Unit,
+        Character,
         Building,
     }
 

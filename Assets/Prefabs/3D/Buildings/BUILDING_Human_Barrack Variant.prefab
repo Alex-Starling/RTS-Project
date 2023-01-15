@@ -684,7 +684,7 @@ PrefabInstance:
     - target: {fileID: 3408654552201270817, guid: b71c6a12c401b1041b5f591dea0cd70e,
         type: 3}
       propertyPath: m_Name
-      value: BUILDING_Human_Barrack
+      value: BUILDING_Human_Barrack Variant
       objectReference: {fileID: 0}
     - target: {fileID: 3684937260697011710, guid: b71c6a12c401b1041b5f591dea0cd70e,
         type: 3}
@@ -776,7 +776,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8320081329042142499, guid: b71c6a12c401b1041b5f591dea0cd70e, type: 3}
+    - {fileID: 584939243568630414, guid: b71c6a12c401b1041b5f591dea0cd70e, type: 3}
+    - {fileID: 8682840956575538596, guid: b71c6a12c401b1041b5f591dea0cd70e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b71c6a12c401b1041b5f591dea0cd70e, type: 3}
 --- !u!4 &6382454567612180906 stripped
 Transform:

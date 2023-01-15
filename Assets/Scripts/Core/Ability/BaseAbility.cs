@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-namespace RtsEngine.Abilities
+namespace RTSEngine.Abilities
 {
     public abstract class BaseAbility : ScriptableObject
     {

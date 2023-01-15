@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace RtsEngine.DataBase
+namespace RTSEngine.DataBase
 {
     [System.Serializable]
     public struct StatsData

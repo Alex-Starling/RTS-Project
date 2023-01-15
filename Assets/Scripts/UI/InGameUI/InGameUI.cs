@@ -1,13 +1,13 @@
-using RtsEngine.Abilities;
-using RtsEngine.DataBase;
-using RtsEngine.Events;
+using RTSEngine.Abilities;
+using RTSEngine.DataBase;
+using RTSEngine.Events;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace RtsEngine.UI
+namespace RTSEngine.UI
 {
     public class InGameUI : MonoBehaviour
     {
@@ -28,7 +28,7 @@ namespace RtsEngine.UI
             InitEvents();
         }
 
-        private void UpdateAbilitesPanel(RTSObject _selectedObject)
+        private void UpdateAbilitesPanel(UnitModel _selectedObject)
         {
             ClearAbilitesPanel();
             if (EntityIsEmpty(_selectedObject))
@@ -41,10 +41,10 @@ namespace RtsEngine.UI
             BaseAbility[] abilities = null;
             switch (_selectedObject.ObjectType)
             {
-                case RTSObjectType.Unit:
+                case UnitType.Character:
                     abilities = _selectedObject.Abilites;
                     break;
-                case RTSObjectType.Building:
+                case UnitType.Building:
                     abilities = _selectedObject.Abilites;
                     break;
                 default:
@@ -69,7 +69,7 @@ namespace RtsEngine.UI
             }
         }
 
-        private bool EntityIsEmpty(RTSObject _selectedObject)
+        private bool EntityIsEmpty(UnitModel _selectedObject)
         {
             if (!_selectedObject)
             {
@@ -94,7 +94,7 @@ namespace RtsEngine.UI
             SelectedObjectIcon.sprite = EmptyImage;
         }
 
-        private void UpdateSelectObjectPanel(RTSObject _selectedObject)
+        private void UpdateSelectObjectPanel(UnitModel _selectedObject)
         {
             string ObjectName = null;
             Sprite ObjectIcon = null;
@@ -107,11 +107,11 @@ namespace RtsEngine.UI
 
             switch (_selectedObject.ObjectType)
             {
-                case RTSObjectType.Unit:
+                case UnitType.Character:
                     ObjectName = _selectedObject.BaseInformation.Name;
                     ObjectIcon = _selectedObject.BaseInformation.Icon;
                     break;
-                case RTSObjectType.Building:
+                case UnitType.Building:
                     ObjectName = _selectedObject.BaseInformation.Name;
                     ObjectIcon = _selectedObject.BaseInformation.Icon;
                     break;

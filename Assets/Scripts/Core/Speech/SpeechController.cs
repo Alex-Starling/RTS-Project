@@ -1,14 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using RtsEngine.DataBase;
-using RtsEngine.Buildings;
+using RTSEngine.DataBase;
 using System;
 
-namespace RtsEngine
+namespace RTSEngine
 {
-    [RequireComponent(typeof(BaseSelectHandler))]
-    [RequireComponent(typeof(BaseSelectHandler))]
     [RequireComponent(typeof(AudioSource))]
     public class SpeechController : MonoBehaviour, ICanSpeak
     {
@@ -16,14 +13,12 @@ namespace RtsEngine
         public Action SpeakOnStartMove { get; set; }
         public bool DisableAuido { get; set; }
 
-        private BaseUnit unit;
-        private BaseBuilding building;
+        private UnitView unit;
         private ICanMove componentCanMove;
 
-        private BaseSelectHandler selectHandler;
         private AudioSource audioSource;
 
-        private RTSObject rtsObject;
+        private UnitModel rtsObject;
 
         private void Start()
         {
@@ -35,23 +30,19 @@ namespace RtsEngine
         private void InitEvents()
         {
             SpeakOnSelected += PlayAudioHello;
-            SpeakOnStartMove += PlayAudioCommand;     
+            SpeakOnStartMove += PlayAudioCommand;
         }
 
         private void InitRtsObject()
         {
             if (unit)
                 rtsObject = DataBaseManager.GetUnit(unit.Key);
-            if (building)
-                rtsObject = DataBaseManager.GetBuilding(building.Key);
         }
 
         private void InitComponenets()
         {
-            selectHandler = GetComponent<BaseSelectHandler>();
             audioSource = GetComponent<AudioSource>();
-            unit = GetComponent<BaseUnit>();
-            building = GetComponent<BaseBuilding>();
+            unit = GetComponent<UnitView>();
             componentCanMove = GetComponent<ICanMove>();
         }
 
@@ -72,7 +63,7 @@ namespace RtsEngine
 
         private void PlayAudioCommand()
         {
-            if (DisableAuido || !rtsObject)
+            if (DisableAuido || !rtsObject || (rtsObject.OnGetCommandClips.Length == 0))
                 return;
 
             int randomInt = UnityEngine.Random.Range(0, rtsObject.OnGetCommandClips.Length);

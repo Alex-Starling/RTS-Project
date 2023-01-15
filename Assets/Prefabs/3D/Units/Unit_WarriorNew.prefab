@@ -2970,6 +2970,11 @@ PrefabInstance:
       propertyPath: Size
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6751837850507434167, guid: 76080090339e2d346ad9e04aa6328699,
+        type: 3}
+      propertyPath: Key
+      value: C_HUMAN_WARRIOR
+      objectReference: {fileID: 0}
     - target: {fileID: 7662033153745040164, guid: 76080090339e2d346ad9e04aa6328699,
         type: 3}
       propertyPath: m_RootOrder

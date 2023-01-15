@@ -1,10 +1,10 @@
-using RtsEngine.Events;
+using RTSEngine.Events;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace RtsEngine
+namespace RTSEngine
 {
     public class RTSInput : MonoBehaviour
     {
