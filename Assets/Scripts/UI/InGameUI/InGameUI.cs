@@ -39,7 +39,7 @@ namespace RTSEngine.UI
                 return;
             }
             BaseAbility[] abilities = null;
-            switch (_selectedObject.ObjectType)
+            switch (_selectedObject.UnitType)
             {
                 case UnitType.Character:
                     abilities = _selectedObject.Abilites;
@@ -105,7 +105,7 @@ namespace RTSEngine.UI
                 return;
             }
 
-            switch (_selectedObject.ObjectType)
+            switch (_selectedObject.UnitType)
             {
                 case UnitType.Character:
                     ObjectName = _selectedObject.BaseInformation.Name;

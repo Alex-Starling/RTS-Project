@@ -21,9 +21,9 @@ MonoBehaviour:
   Stats:
     Health: 0
     Damage: 0
-  ObjectType: 0
+  UnitType: 0
   Model:
-  - {fileID: 6750699282204051899, guid: 0e1fc914958572b43bf28235d7d40c2c, type: 3}
+  - {fileID: 7658678430651949611, guid: 0e1fc914958572b43bf28235d7d40c2c, type: 3}
   AnimatorOverride: {fileID: 22100000, guid: c6eb0970db0a0e14f950246740ddbc45, type: 2}
   Size: 2
   OnSelectClips: []

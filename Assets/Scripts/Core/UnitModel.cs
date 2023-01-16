@@ -13,9 +13,9 @@ namespace RTSEngine
         public BaseInfo BaseInformation;
         public BaseAbility[] Abilites;
         public StatsData Stats;
-        public UnitType ObjectType;
+        public UnitType UnitType;
         [Header("Visual")]
-        public GameObject[] Model;
+        public UnitView[] Model;
         public AnimatorOverrideController AnimatorOverride;
         public float Size;
         [Header("Speech")]
