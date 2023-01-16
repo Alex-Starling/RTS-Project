@@ -13,13 +13,18 @@ namespace RTSEngine
         public BaseBehaviour CurrentBehaviour { get; protected set; }
         public BaseBehaviour StartBehaviour;
 
+        [field: SerializeField] public GameObject model { get; protected set; }
         [field: SerializeField] public ICanSpeak Speak { get; protected set; }
         [field: SerializeField] public ICanMove Move { get; protected set; }
         [field: SerializeField] public ICanSelected Select { get; protected set; }
 
-        protected virtual void Start()
+        protected virtual void Awake()
         {
             InitComponents();
+        }
+
+        private void Start()
+        {
             Init(StartBehaviour);
         }
 

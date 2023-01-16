@@ -38,11 +38,22 @@ namespace RTSEngine
 
         private void Spawn()
         {
-            UnitView go;
             int randomIndx = UnityEngine.Random.Range(0, unitModel.Model.Length);
+            UnitView uv;
 
-            go = GameObject.Instantiate<UnitView>(unitModel.Model[randomIndx], transform.position, Quaternion.identity);
+            if (unitModel.UnitType == UnitType.Character)
+                uv = GameObject.Instantiate<UnitView>(characterTemplate, transform.position, Quaternion.identity);
+            else
+                uv = GameObject.Instantiate<UnitView>(buildingTemplate, transform.position, Quaternion.identity);
 
+            var go = GameObject.Instantiate(unitModel.Model[randomIndx], uv.model.transform);
+
+            uv.Key = key;
+
+            uv.Move.Agent.radius = unitModel.AgentRadius;
+            go.layer = 0;
+            go.transform.localPosition = Vector3.zero;
+            go.transform.localRotation = Quaternion.identity;
         }
 
     }

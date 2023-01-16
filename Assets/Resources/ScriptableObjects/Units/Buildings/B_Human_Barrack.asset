@@ -17,11 +17,12 @@ MonoBehaviour:
     Name: B_HUMAN_BARRACKS
     Description: B_HUMAN_BARRACKS
     Icon: {fileID: 21300000, guid: ff4305481969c374d8320e5114de71d0, type: 3}
-  Abilites: []
+  Abilites:
+  - {fileID: 11400000, guid: 3d2708bb78076f844a727eedad0d1b9e, type: 2}
   Stats:
     Health: 5
     Damage: 5
-  ObjectType: 1
+  UnitType: 0
   Model:
   - {fileID: 1596861346305431519, guid: a42010a97f8f33444b6f80ca5ac749d0, type: 3}
   AnimatorOverride: {fileID: 0}
@@ -30,3 +31,4 @@ MonoBehaviour:
   OnGetCommandClips: []
   OnCantExecuteCommandClips: []
   MovementType: 0
+  AgentRadius: 0.25

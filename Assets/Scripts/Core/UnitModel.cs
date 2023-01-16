@@ -15,7 +15,7 @@ namespace RTSEngine
         public StatsData Stats;
         public UnitType UnitType;
         [Header("Visual")]
-        public UnitView[] Model;
+        public GameObject[] Model;
         public AnimatorOverrideController AnimatorOverride;
         public float Size;
         [Header("Speech")]
@@ -23,7 +23,8 @@ namespace RTSEngine
         public AudioClip[] OnGetCommandClips;
         public AudioClip[] OnCantExecuteCommandClips;
         [Header("Movement")]
-        public MovementType MovementType;
+        public MovementType MovementType = MovementType.NavMesh;
+        public float AgentRadius = 0.25f;
 
         public bool IsEmpty()
         {

@@ -17,13 +17,14 @@ MonoBehaviour:
     Name: Warrior
     Description: Warrior
     Icon: {fileID: 21300000, guid: f5fdffe8def6eab44b1fda111b6eb9bd, type: 3}
-  Abilites: []
+  Abilites:
+  - {fileID: 11400000, guid: 135b6d3ce2415374da51bd1c6c0ff5b6, type: 2}
   Stats:
     Health: 0
     Damage: 0
   UnitType: 0
   Model:
-  - {fileID: 7658678430651949611, guid: 0e1fc914958572b43bf28235d7d40c2c, type: 3}
+  - {fileID: 3552089795067360406, guid: cd3a4523c7469ee44ae55b1c8ad012cf, type: 3}
   AnimatorOverride: {fileID: 22100000, guid: c6eb0970db0a0e14f950246740ddbc45, type: 2}
   Size: 2
   OnSelectClips: []

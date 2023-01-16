@@ -1,9 +1,5 @@
 using RTSEngine.Abilities;
-using RTSEngine.DataBase;
 using RTSEngine.Events;
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,7 +8,7 @@ namespace RTSEngine.UI
     public class InGameUI : MonoBehaviour
     {
         [Header("Abilities")]
-        public GameObject AbilityButtonPrefab;
+        public AbilityButton AbilityButtonPrefab;
         public GameObject AbilitiesPanel;
         [Header("MiniMap")]
         public GameObject MiniMap;
@@ -28,37 +24,27 @@ namespace RTSEngine.UI
             InitEvents();
         }
 
-        private void UpdateAbilitesPanel(UnitModel _selectedObject)
+        private void UpdateAbilitesPanel(UnitModel selectedObject)
         {
             ClearAbilitesPanel();
-            if (EntityIsEmpty(_selectedObject))
-            {
-                SelectedObjectName.text = "";
-                SelectedObjectIcon.sprite = EmptyImage;
 
+            if (!selectedObject || selectedObject.IsEmpty())
+                ResetSelectedObjectPanel();
+            else
+                PopulateAbilityButtons(selectedObject.Abilites);
+        }
+
+        private void PopulateAbilityButtons(BaseAbility[] abilities)
+        {
+            if (abilities == null)
                 return;
-            }
-            BaseAbility[] abilities = null;
-            switch (_selectedObject.UnitType)
-            {
-                case UnitType.Character:
-                    abilities = _selectedObject.Abilites;
-                    break;
-                case UnitType.Building:
-                    abilities = _selectedObject.Abilites;
-                    break;
-                default:
-                    break;
-            }
 
-            if (abilities != null)
+            foreach (var ability in abilities)
             {
-                foreach (var item in abilities)
-                {
-                    var go = GameObject.Instantiate(AbilityButtonPrefab, AbilitiesPanel.transform);
-                }
+                var button = GameObject.Instantiate(AbilityButtonPrefab, AbilitiesPanel.transform);
+                button.Icon.sprite = ability.BaseInformation.Icon;
+                button.Text.text = "";
             }
-
         }
 
         private void ClearAbilitesPanel()
@@ -69,19 +55,6 @@ namespace RTSEngine.UI
             }
         }
 
-        private bool EntityIsEmpty(UnitModel _selectedObject)
-        {
-            if (!_selectedObject)
-            {
-                return true;
-            }
-            if (_selectedObject.Key == null || _selectedObject.Key == "")
-            {
-                return true;
-            }
-            return false;
-        }
-
         private void InitEvents()
         {
             SelectionEvents.eventSelectObject += UpdateSelectObjectPanel;
@@ -89,6 +62,12 @@ namespace RTSEngine.UI
         }
 
         private void ClearSelectionPanel()
+        {
+            SelectedObjectName.text = "";
+            SelectedObjectIcon.sprite = EmptyImage;
+        }
+
+        private void ResetSelectedObjectPanel()
         {
             SelectedObjectName.text = "";
             SelectedObjectIcon.sprite = EmptyImage;
@@ -121,7 +100,6 @@ namespace RTSEngine.UI
 
             SelectedObjectName.text = ObjectName;
             SelectedObjectIcon.sprite = ObjectIcon;
-
         }
     }
 
