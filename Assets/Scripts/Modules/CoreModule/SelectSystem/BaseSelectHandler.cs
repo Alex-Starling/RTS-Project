@@ -15,7 +15,7 @@ namespace RtsEngine
         [HideInInspector] public bool GroupedUnit;
         [SerializeField] protected GameObject SelectVisualObject;
 
-        public GroupAI GroupParent { get; set; }
+        public Squad GroupParent { get; set; }
         //public Transform GroupParentTransform { get; set; }
         public BaseSelectHandler ParentGroupAI { get; set; }
         public BaseUnit baseUnit { get; set; }

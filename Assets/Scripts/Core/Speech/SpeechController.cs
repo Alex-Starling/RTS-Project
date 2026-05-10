@@ -10,7 +10,7 @@ namespace RtsEngine
     [RequireComponent(typeof(BaseSelectHandler))]
     [RequireComponent(typeof(BaseSelectHandler))]
     [RequireComponent(typeof(AudioSource))]
-    public class UnitAudioManager : MonoBehaviour, ICanSpeak
+    public class SpeechController : MonoBehaviour, ICanSpeak
     {
         public Action SpeakOnSelected { get; set; }
         public Action SpeakOnStartMove { get; set; }
@@ -35,9 +35,7 @@ namespace RtsEngine
         private void InitEvents()
         {
             SpeakOnSelected += PlayAudioHello;
-
-            if (componentCanMove != null)
-                SpeakOnStartMove += PlayAudioCommand;
+            SpeakOnStartMove += PlayAudioCommand;     
         }
 
         private void InitRtsObject()

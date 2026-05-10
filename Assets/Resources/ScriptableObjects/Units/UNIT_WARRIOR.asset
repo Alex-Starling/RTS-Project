@@ -36,3 +36,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: d8ecddba597946f4fa8c9cfabed864d0, type: 3}
   - {fileID: 8300000, guid: 2918864ff15004d4da6a3554dea56a5b, type: 3}
   OnCantExecuteCommandClips: []
+  UnitsInLine: 1
+  UnitsCount: 1
+  UnitSize: 2

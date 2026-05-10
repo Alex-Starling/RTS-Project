@@ -17,8 +17,8 @@ namespace RtsEngine.SelectionSystem
 {
     public class SelectionSystem : MonoBehaviour
     {
-        public List<GroupAI> unitList = new List<GroupAI>();
-        public List<GroupAI> Squads = new List<GroupAI>();
+        public List<Squad> unitList = new List<Squad>();
+        public List<Squad> Squads = new List<Squad>();
 
         [SerializeField]
         private ParticleSystem SelectPointFX;
@@ -111,38 +111,57 @@ namespace RtsEngine.SelectionSystem
                 return;
 
             BuildFormation(_pos);
-             Squads[0].Speak?.SpeakOnStartMove?.Invoke();
-            //    Squads[index].Move?.MoveToPosition(newPosition);
-            //     Squads[i].UnitsInSquad[totalIndex].Move?.MoveToPosition(newPosition);
+            Squads[0].Speak?.SpeakOnStartMove?.Invoke();
         }
 
+        public int maxSquadsInLine;
+        public float squadsOffset;
         void BuildFormation(Vector3 targetPosition)
         {
             Vector3 squadPosition = targetPosition;
             int squadInRow = 0;
-
+            int countOfSquadLines = 1;
+            float sum = 0;
             // Iterate through all squads
             for (int i = 0; i < Squads.Count(); i++)
             {
+                var unitsInLine = Squads[i].maxObjectsPerRow;
+
                 // Iterate through all units in the current squad
                 for (int j = 0; j < Squads[i].UnitsInSquad.Length; j++)
                 {
                     // Calculate the position of the current unit in the squad formation
-                    Vector3 unitPosition = squadPosition + new Vector3((j % 4) * Squads[i].UnitsInSquad[j].Size, 0, (j / 4) * Squads[i].UnitsInSquad[j].Size);
+                    Vector3 unitPosition = squadPosition + new Vector3((j % unitsInLine) * Squads[i].UnitsInSquad[j].Size, 0, (j / unitsInLine) * Squads[i].UnitsInSquad[j].Size);
 
                     // Set the position of the current unit
                     Squads[i].UnitsInSquad[j].Move?.MoveToPosition(unitPosition);
+
                 }
+
+                Debug.Log("squad " + squadInRow +" on line " + countOfSquadLines);
+
                 // Update the squad position for next squad
-                if (squadInRow < 3)
+                if (squadInRow < maxSquadsInLine)
                 {
-                    squadPosition += new Vector3(4 * Squads[i].UnitsInSquad[0].Size, 0, 0);
+                    squadPosition += new Vector3(unitsInLine * Squads[i].Size, 0, 0);
                     squadInRow++;
                 }
                 else
                 {
-                    squadPosition = targetPosition + new Vector3(0, 0, 4 * Squads[i].UnitsInSquad[0].Size);
+                    int idFirstSquadInPrevLine = i - (maxSquadsInLine);
+
+                    Debug.Log($"Отряд переходит на {countOfSquadLines} линию." + "idx first squd in pl= " + idFirstSquadInPrevLine);
+
+                    int squadLines = Squads[idFirstSquadInPrevLine].UnitsInSquad.Length / unitsInLine;
+
+                    sum += squadLines * Squads[idFirstSquadInPrevLine].Size * squadsOffset;
+
+                    squadPosition = targetPosition + new Vector3(0, 0, sum);
+
+                    Debug.Log(squadPosition);
                     squadInRow = 0;
+
+                    countOfSquadLines++;
                 }
             }
         }

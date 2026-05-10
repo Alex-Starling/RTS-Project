@@ -4,14 +4,14 @@ using System.Collections.Generic;
 using UnityEngine;
 namespace RtsEngine.Units
 {
-    [RequireComponent(typeof(GroupAI))]
-    public class GroupedUnitSelectHandler : BaseSelectHandler
+    [RequireComponent(typeof(Squad))]
+    public class SquadSelectHandler : BaseSelectHandler
     {
-        private GroupAI groupAI;
+        private Squad groupAI;
 
         private void Awake()
         {
-            groupAI = GetComponent<GroupAI>();
+            groupAI = GetComponent<Squad>();
         }
 
         public override (string, RTSObjectType) GetInfoAboutSelectedObject()
@@ -44,7 +44,7 @@ namespace RtsEngine.Units
 
         protected override void Init()
         {
-            baseUnit = GetComponentInParent<GroupAI>();
+            baseUnit = GetComponentInParent<Squad>();
         }
 
         public override void OnAddedToSelectList()
